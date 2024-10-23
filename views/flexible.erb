@@ -7,8 +7,18 @@
 <body>
 <h1><%= @dice%>d<%= @sides%></h1>
 
-<p><%=@results%></p>
+<p><a href="/process_roll?num_dice=<%= params[:num_dice] %>&num_sides=<%= params[:num_sides] %>">Roll again</a> <a href = "/">Go back home</a></p>
 
+<ol>
+
+<% @results.each do |a| %>
+    <li>
+    <em> Result:</em> <b><%= a %></b>
+    </li>
+ <% end %>
+
+</ol>
 
 </body>
+
 </html>
